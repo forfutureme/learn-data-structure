@@ -22,6 +22,8 @@ module.exports = {
     entry: {
         app: './src/app.js',
         vendor: [
+            'es6-promise',
+            'isomorphic-fetch',
             'vue',
             'vue-router',
             'vuex',

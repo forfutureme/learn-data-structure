@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "webpack-dev-server --inline --hot --config ./build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --inline --hot --config ./build/webpack.dev.config.js",
     "pro": "webpack --config ./build/webpack.pro.config.js"
   },
   "repository": {
@@ -23,7 +23,9 @@
     "vue": "^2.2.6",
     "vuex": "^2.2.1",
     "vue-router": "^2.3.1",
-    "vuex-router-sync": "^4.1.2"
+    "vuex-router-sync": "^4.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "es6-promise": "^4.1.0"
   },
   "devDependencies": {
     "webpack": "^2.3.2",
