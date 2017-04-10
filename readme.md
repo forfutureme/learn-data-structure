@@ -8,6 +8,14 @@
 * 开发环境执行`npm run dev`
 * 生产环境执行`npm run pro`
 
+### dist目录
+
+* 同时生成了dist目录，即生产环境下打包后的代码，可以直接访问看到最终效果（需要http服务）
+* 启动http服务的方法很多，方便的话可以使用node插件http-server 
+* 执行`(c)npm install http-server -g` 全局安装
+* 进入dist目录执行 `http-server`(默认端口8080)，关于[http-server](https://www.npmjs.com/package/http-server)
+* 如果不冲突的话，浏览器`http://127.0.0.1:8080/`即可看到效率，（ui有点丑）
+
 
 ### 更新说明
 

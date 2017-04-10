@@ -32,7 +32,7 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve(projectRoot, './output/'),
+        path: path.resolve(projectRoot, './dist/'),
         publicPath: '/',
         filename: '[name]_[hash:8].js',
         chunkFilename: '[name]_[hash:8].js'
