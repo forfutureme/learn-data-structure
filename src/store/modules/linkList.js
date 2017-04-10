@@ -39,12 +39,13 @@ const state = {
             id: 'Examples'
         }
     ],
-    activityNav: 'Examples',
-    activityNavChild: '',
+    activityNav: 'Created',
+    activityNavChild: 'TwoWayLink',
     code: {
         node: '',
         linkList: '',
-        loopLinkList: ''
+        loopLinkList: '',
+        twoWayList: ''
     }
 };
 

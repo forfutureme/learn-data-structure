@@ -1,5 +1,5 @@
 /**
- * Created by huweijian on 2017/4/6.
+ * Created by huweijian on 2017/4/10.
  * @title
  */
 import Node from './Node';
@@ -130,3 +130,4 @@ export default class LinkList {
     }
 
 }
+

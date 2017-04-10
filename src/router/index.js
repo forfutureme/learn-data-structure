@@ -32,7 +32,10 @@ const router = new VueRouter({
                 });
                 store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
                     name: 'loopLinkList'
-                })
+                });
+                store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
+                    name: 'twoWayList'
+                });
             }
         }
     ]
