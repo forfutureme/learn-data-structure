@@ -16,24 +16,57 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
+            name: 'index',
             component: resolve => require(['../views/index.vue'], resolve)
+        },
+        {
+            path: '/array',
+            name: 'array',
+            component: resolve => require(['../views/page/array/Array.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_ARRAY_CODE_SET,
+                    name: 'arraySummary',
+                    next
+                });
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_ARRAY_CODE_SET,
+                    name: 'dyadicArray'
+                })
+            }
+        },
+        {
+            path: '/list',
+            name: 'list',
+            component: resolve => require(['../views/page/list/List.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LIST_CODE_SET,
+                    name: 'list',
+                    next
+                });
+            }
         },
         {
             path: '/linkList',
             name: 'linkList',
             component: resolve => require(['../views/page/linkList/LinkList.vue'], resolve),
             beforeEnter(to, from, next){
-                store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LINK_CODE_SET,
                     name: 'node',
                     next
                 });
-                store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LINK_CODE_SET,
                     name: 'linkList'
                 });
-                store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LINK_CODE_SET,
                     name: 'loopLinkList'
                 });
-                store.dispatch(types.JAVASCRIPT_DATA_LINK_CODE, {
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LINK_CODE_SET,
                     name: 'twoWayList'
                 });
             }

@@ -3,7 +3,7 @@
  * @title 链表
  */
 import * as types from '../mutation-type';
-import LinkListApi from '../../api/linkList';
+
 
 
 const state = {
@@ -39,8 +39,8 @@ const state = {
             id: 'Examples'
         }
     ],
-    activityNav: 'Created',
-    activityNavChild: 'TwoWayLink',
+    activityNav: 'Summarys',
+    activityNavChild: '',
     code: {
         node: '',
         linkList: '',
@@ -54,29 +54,7 @@ const getters = {
 };
 
 const actions = {
-    /**
-     * 请求代码文本
-     * @param commit
-     * @param name
-     */
-    [types.JAVASCRIPT_DATA_LINK_CODE]: ({commit}, {name, next}) => {
-        LinkListApi
-            .getCodeText({
-                '_mt': 'text',
-                query: {
-                    name
-                }
-            })
-            .then(function (result) {
-                let text = result.text;
-                commit(types.JAVASCRIPT_DATA_LINK_CODE_SET, {
-                    name,
-                    text
-                });
-                next && next();
-            })
 
-    }
 };
 
 const mutations = {

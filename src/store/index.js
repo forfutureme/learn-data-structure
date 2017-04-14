@@ -10,7 +10,10 @@ import actions from './actions';
 import getters from './getters';
 import createLogger from 'vuex/dist/logger';
 
+import arrayStore from './modules/arrayStore';
+import list from './modules/list';
 import linkList from './modules/linkList';
+
 
 
 import navContent from '../data/navTitle';
@@ -24,12 +27,20 @@ const debug = ENV !== 'PRO';
  */
 export default new Vuex.Store({
     state: {
-        navTitle: navContent
+        navTitle: navContent,
+        warning: {
+            show: false,
+            time: 1500,
+            msg: ''
+        },
+        loading: false
     },
     actions,
     mutations,
     getters,
     modules: {
+        arrayStore,
+        list,
         linkList
     },
     strict: debug,

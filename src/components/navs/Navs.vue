@@ -113,7 +113,7 @@
             }
         },
         mounted(){
-//            console.log(this.navs, this.activityNav);
+            console.log(this.navs, this.activityNav);
         }
     }
 </script>

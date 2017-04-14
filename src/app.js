@@ -13,12 +13,12 @@ import './assets/stylus/style.styl';
 //结合vuex和路由
 sync(store, router);
 
-export const app = new Vue({
+export const Root = new Vue({
     router,
     store,
     ...App
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    app.$mount('#app');
+    Root.$mount('#app');
 });

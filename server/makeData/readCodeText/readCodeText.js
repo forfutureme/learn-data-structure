@@ -13,24 +13,22 @@ function readCode(type) {
             error: 200,
             msg: 'ok'
         },
-        result: {
-
-        }
+        result: {}
 
     };
 
     try {
         let text = fs.readFileSync(url, 'utf-8');
         text = text
-            // .replace(/\/\*\*/, '') //去掉最上面的注释
-            // .replace(/\*.*/g, '') //去掉最上面的注释
+        // .replace(/\/\*\*/, '') //去掉最上面的注释
+        // .replace(/\*.*/g, '') //去掉最上面的注释
             .replace(/\*\*/, '**<br>&nbsp;&nbsp;')
-            .replace(/[\s]{2}/g, '--') //替换\s
-            .replace(/(-{2,})/g, '<br>$1') //换行
-            .replace(/<br>-{2,}/, '') //清理多余
+            .replace(/[\s]{2}/g, '^^') //替换\s
+            .replace(/(\^{2,})/g, '<br>$1') //换行
+            .replace(/<br>\^{2,}/, '') //清理多余
             .replace(/\n/g, '<br>') //替换回车位换行
-            .replace(/^<br>/, '') //去掉顶部换行
-            .replace(/--/g, '&nbsp;&nbsp;')  //替换--为空格
+            .replace(/\^<br>/, '') //去掉顶部换行
+            .replace(/\^\^/g, '&nbsp;&nbsp;')  //替换--为空格
             .replace(/(&nbsp;){2}?=(import)/, '')  //对齐import
             .replace(/\*\/<br>&nbsp;&nbsp;/, '*/<br>')   //对齐import
             .replace(/(export|default|class|this|null|if|else|let|while|try|catch|return|console|import|from|new)\b/g,
@@ -38,14 +36,23 @@ function readCode(type) {
             .replace(/\.(\w+)/g, '.<span class="attribute" style="color: #994500;">$1</span>')
             .replace(/(constructor)/g, '<span class="attribute" style="color: #994500;">$1</span>') //高亮属性
             .replace(/(\w+)(\(.*?\))/g, '<span class="attribute" style="color: #994500; font-weight: 700">$1</span>$2') //高亮方法属性
-            .replace(/'(\w+)'/g, '<span class="compare" style="color: #3ad900;">\'$1\'</span>'); //高亮相等判断
+            .replace(/'([^']+?)'/g, '<span class="compare" style="color: #3ad900;">\'$1\'</span>'); //高亮相等判断
 
         text = text.split(/\/(\*){10,}\//);
         text.map((item, i) => {
-           if (item == '*'){
-               text.splice(i, 1);
-           }
+            if (item.indexOf('ZWF') > -1) {
+                text[i] = '';
+            }
+            if (item == '*') {
+                text.splice(i, 1);
+            }
         });
+
+        for (let i = 0; i < text.length; i++){
+            if (text[i].indexOf('ZWF') > -1){
+                text[i] = '';
+            }
+        }
 
         end.result = {
             text
