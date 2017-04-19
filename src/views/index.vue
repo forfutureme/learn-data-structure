@@ -33,6 +33,7 @@
                         background #eee
                         cursor pointer
                         color #333
+                        text-align center
 
 
 </style>

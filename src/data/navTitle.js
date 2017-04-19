@@ -14,6 +14,11 @@ export default [
         href: 'list'
     },
     {
+        name: '栈',
+        id: 3,
+        href: 'stack'
+    },
+    {
         name: '链表',
         id: '5',
         href: 'linkList'

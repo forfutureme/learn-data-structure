@@ -34,8 +34,8 @@ module.exports = {
     output: {
         path: path.resolve(projectRoot, './dist/'),
         publicPath: '/',
-        filename: '[name]_[hash:8].js',
-        chunkFilename: '[name]_[hash:8].js'
+        filename: 'js/[name]_[hash:8].js',
+        chunkFilename: 'js/[name]_[hash:8].js'
     },
 
     plugins: [
@@ -47,7 +47,7 @@ module.exports = {
         // new webpack.DefinePlugin({
         //     ENV: JSON.stringify('online')
         // }),
-        new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin('css/style.css'),
 
         new webpack.LoaderOptionsPlugin({
             minimize: true,
@@ -89,7 +89,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 20000,
-                    name: '[name].[ext]?[hash]'
+                    name: 'images/[name].[ext]?[hash]'
                 }
             }
         ]

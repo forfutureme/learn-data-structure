@@ -48,6 +48,18 @@ const router = new VueRouter({
             }
         },
         {
+            path: '/stack',
+            name: 'stack',
+            component: resolve => require(['../views/page/stack/Stack.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_LIST_CODE_SET,
+                    name: 'stack',
+                    next
+                });
+            }
+        },
+        {
             path: '/linkList',
             name: 'linkList',
             component: resolve => require(['../views/page/linkList/LinkList.vue'], resolve),

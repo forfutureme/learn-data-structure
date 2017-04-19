@@ -18,31 +18,7 @@
     </div>
 </template>
 <style rel="stylesheet/stylus" lang="stylus" scoped>
-    .example{
-        .example-title{
-            h5{
-                font-size: 16px;
-                color: #333;
-            }
-        }
-        .example-main{
-            padding: 10px;
-            .example-box{
-                .title{
-                    padding: 10px 0;
-                    color: #666;
-                    font-size: 14px;
-                }
-                .describe{
-                    text-indent: 2em;
-                    color: #999;
-                    font-size: 12px;
-                    line-height: 1.5;
-                }
-            }
-        }
 
-    }
 </style>
 <script>
 

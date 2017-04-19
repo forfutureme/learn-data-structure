@@ -13,6 +13,7 @@ import createLogger from 'vuex/dist/logger';
 import arrayStore from './modules/arrayStore';
 import list from './modules/list';
 import linkList from './modules/linkList';
+import stack from './modules/stack';
 
 
 
@@ -41,7 +42,8 @@ export default new Vuex.Store({
     modules: {
         arrayStore,
         list,
-        linkList
+        linkList,
+        stack
     },
     strict: debug,
     plugins: debug ? [createLogger()] : []
