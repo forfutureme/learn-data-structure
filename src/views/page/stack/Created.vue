@@ -15,7 +15,7 @@
     export default{
         computed: {
             ...mapState({
-                code: state => state.list.code
+                code: state => state.stack.code
             })
         },
         data(){

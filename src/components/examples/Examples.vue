@@ -3,15 +3,29 @@
         <h5 class="title">{{examples.title}}</h5>
         <div class="examples-center">
             <div class="examples-describe">{{examples.describe}}</div>
-            <div class="examples-from">
+            <div class="examples-from" v-if="examples.type == 'inputCheck'">
                 <div class="examples-textarea" v-for="textarea in examples.textareas">
                     <label>{{textarea.title}}</label>
                     <textarea v-model="textarea.val"></textarea>
                 </div>
-                <div class="examples-btn">
-                    <a class="clear" @click="toClear">清空</a>
-                    <a class="sure" @click="toCheck">测试</a>
+                <div class="btn-box">
+                    <a class="examples-btn clear" @click="toClear">清空</a>
+                    <a class="examples-btn sure" @click="toCheck">测试</a>
                 </div>
+            </div>
+            <div class="examples-create" v-if="examples.type == 'createData'">
+                <div class="examples-create-init">
+                    <a class="examples-btn sure"
+                       @click="toCreateData">点我生成一组数据</a>
+                    <p>{{examples.createData.strings}}</p>
+                    <a class="examples-btn sure"
+                       v-if="examples.createData.doName"
+                       @click="sort(1)">{{examples.createData.doName}}</a>
+                    <a class="examples-btn sure"
+                       v-if="examples.createData.doName2"
+                       @click="sort(10)">{{examples.createData.doName2}}</a>
+                </div>
+
             </div>
             <div class="examples-result">
                 <p>结果：<span>{{result}}</span></p>
@@ -44,7 +58,6 @@
         .examples-from{
             .examples-textarea,
             .examples-inout,
-            .examples-btn,
             .examples-select{
                 _flex_box();
                 justify-content: flex-start;
@@ -65,19 +78,18 @@
                     padding: 5px;
                 }
             }
-            .examples-btn{
-                a{
-                    _flex_box();
-                    margin: 0 5px;
-                    padding: 5px  15px;
-                    cursor: pointer;
+        }
+        .examples-create{
+            .examples-create-init{
+                display: flex;
+                flex-wrap: wrap;
+                p{
+                    width: 100%;
+                    min-height: 50px;
+                    margin: 10px auto;
+                    padding: 5px;
+                    border: 1px solid #ddd;
                     border-radius: 5px;
-                    color: #000;
-                    background: #ddd;
-                    &.sure{
-                        background: #00B7FF;
-                        color: #fff;
-                    }
                 }
             }
         }
@@ -92,6 +104,23 @@
                     margin-left: 5px;
                     border-bottom: 1px solid  #ddd;
                 }
+            }
+        }
+        .btn-box{
+            display: flex;
+        }
+        .examples-btn{
+            _flex_box();
+            min-width: 80px;
+            margin: 0 5px;
+            padding: 5px  15px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #000;
+            background: #ddd;
+            &.sure{
+                background: #00B7FF;
+                color: #fff;
             }
         }
     
@@ -123,7 +152,19 @@
                 this.examples.textareas.map((item, i) => {
                     this.examples.textareas[i].val = '';
                 })
-            }
+            },
+            /**
+             * 生成随机数据
+             */
+            toCreateData(){
+                this.examples.createData.createOriginData();
+            },
+            sort(digit){
+                this.result = this.examples.createData.sort(digit);
+            },
+        },
+        mounted(){
+            console.log(this.examples);
         }
     }
 </script>

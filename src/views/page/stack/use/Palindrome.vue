@@ -17,6 +17,7 @@
             return{
                 examples: {
                     title: '判断输入是否回文',
+                    type: 'inputCheck',
                     describe: '在下面输入框中输入你要测试的文本，然后点击测试按钮等待结果',
                     textareas: [
                         {

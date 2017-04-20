@@ -15,7 +15,7 @@ const state = {
             id: 'Created'
         }
     ],
-    activityNav: 'Created',
+    activityNav: 'Summarys',
     code: {}
 };
 

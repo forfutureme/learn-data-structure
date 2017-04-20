@@ -19,6 +19,11 @@ export default [
         href: 'stack'
     },
     {
+        name: '队列',
+        id: 4,
+        href: 'queue'
+    },
+    {
         name: '链表',
         id: '5',
         href: 'linkList'

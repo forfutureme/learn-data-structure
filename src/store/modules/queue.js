@@ -1,6 +1,6 @@
 /**
- * Created by huweijian on 2017/4/17.
- * @title 栈
+ * Created by huweijian on 2017/4/19.
+ * @title
  */
 
 import * as types from '../mutation-type';
@@ -20,10 +20,9 @@ const state = {
             id: 'Uses'
         }
     ],
-    activityNav: 'Summarys',
+    activityNav: 'Uses',
     code: {}
 };
-
 const getters = {};
 const actions = {};
 const mutations = {
@@ -32,7 +31,7 @@ const mutations = {
      * @param state
      * @param id
      */
-    [types.JAVASCRIPT_DATA_STACK_ACTIVITY_NAV]: (state, id) => {
+    [types.JAVASCRIPT_DATA_QUEUE_ACTIVITY_NAV]: (state, id) => {
         state.activityNav = id;
     },
     /**
@@ -41,13 +40,13 @@ const mutations = {
      * @param name
      * @param text
      */
-    [types.JAVASCRIPT_DATA_STACK_CODE_SET]: (state, {name, text}) => {
+    [types.JAVASCRIPT_DATA_QUEUE_CODE_SET]: (state, {name, text}) => {
         state.code[name] = text;
     }
 };
 
 /**
- * 输出栈模块
+ * 输出队列模块
  */
 export default {
     state,

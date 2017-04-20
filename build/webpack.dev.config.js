@@ -18,7 +18,7 @@ let config = Object.assign({}, webpackConfig, {
         })
     ]),
     devServer: {
-        port: 8881,
+        port: 8864,
         historyApiFallback: true,
         stats: 'errors-only',
         proxy: {

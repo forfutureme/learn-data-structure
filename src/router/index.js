@@ -53,8 +53,20 @@ const router = new VueRouter({
             component: resolve => require(['../views/page/stack/Stack.vue'], resolve),
             beforeEnter(to, from, next){
                 store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
-                    type: types.JAVASCRIPT_DATA_LIST_CODE_SET,
+                    type: types.JAVASCRIPT_DATA_STACK_CODE_SET,
                     name: 'stack',
+                    next
+                });
+            }
+        },
+        {
+            path: '/queue',
+            name: 'queue',
+            component: resolve => require(['../views/page/queue/Queue.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_QUEUE_CODE_SET,
+                    name: 'queue',
                     next
                 });
             }

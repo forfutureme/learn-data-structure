@@ -14,6 +14,7 @@ import arrayStore from './modules/arrayStore';
 import list from './modules/list';
 import linkList from './modules/linkList';
 import stack from './modules/stack';
+import queue from './modules/queue';
 
 
 
@@ -43,7 +44,8 @@ export default new Vuex.Store({
         arrayStore,
         list,
         linkList,
-        stack
+        stack,
+        queue
     },
     strict: debug,
     plugins: debug ? [createLogger()] : []
