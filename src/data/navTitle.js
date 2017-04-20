@@ -27,5 +27,10 @@ export default [
         name: '链表',
         id: '5',
         href: 'linkList'
+    },
+    {
+        name: '字典',
+        id: '6',
+        href: 'dictionary'
     }
 ]

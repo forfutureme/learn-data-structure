@@ -31,7 +31,7 @@ const mutations = {
      * @param state
      * @param id
      */
-    [types.JAVASCRIPT_DATA_QUEUE_ACTIVITY_NAV]: (state, id) => {
+    [types.JAVASCRIPT_DATA_DICTIONARY_ACTIVITY_NAV]: (state, id) => {
         state.activityNav = id;
     },
     /**
@@ -40,7 +40,7 @@ const mutations = {
      * @param name
      * @param text
      */
-    [types.JAVASCRIPT_DATA_QUEUE_CODE_SET]: (state, {name, text}) => {
+    [types.JAVASCRIPT_DATA_DICTIONARY_CODE_SET]: (state, {name, text}) => {
         state.code[name] = text;
     }
 };

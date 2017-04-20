@@ -47,7 +47,8 @@
                 while (stack.length()){
                     word += stack.pop();
                 }
-                return str === word ? '是' : '不是';
+
+                return `${this.examples.textareas[0].val}${str === word ? '是' : '不是'}回文`;
             }
         },
         mounted(){

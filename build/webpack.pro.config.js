@@ -2,11 +2,18 @@
  * Created by huweijian on 2017/4/1.
  * @title
  */
+let projectRoot = process.cwd();
+let path = require('path');
 let webpack = require('webpack');
+let cleanWebpackPlugin = require('clean-webpack-plugin');
 let webpackConfig = require('./webpack.base.config.js');
-
 let config = Object.assign({}, webpackConfig, {
     plugins: webpackConfig.plugins.concat([
+        new cleanWebpackPlugin(['dist'],{
+            root: path.resolve(projectRoot),
+            verbose: true,
+            dry: false,
+        }),
         new webpack.DefinePlugin({
             ENV: JSON.stringify('PRO')
         }),

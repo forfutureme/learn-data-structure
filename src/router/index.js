@@ -94,6 +94,18 @@ const router = new VueRouter({
                     name: 'twoWayList'
                 });
             }
+        },
+        {
+            path: '/dictionary',
+            name: 'dictionary',
+            component: resolve => require(['../views/page/dictionary/Dictionary.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_DICTIONARY_CODE_SET,
+                    name: 'dictionary',
+                    next
+                });
+            }
         }
     ]
 });

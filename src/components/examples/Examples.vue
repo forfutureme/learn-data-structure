@@ -135,15 +135,12 @@
                 result: ''
             }
         },
-        components:{
-
-        },
         methods: {
             /**
              * 检查
              */
             toCheck(){
-                this.result = `${this.examples.textareas[0].val}${this.examples.checkFun(this.examples.textareas[0].val)}回文`;
+                this.result = this.examples.checkFun(this.examples.textareas[0].val);
             },
             /**
              * 清空输入
@@ -162,9 +159,6 @@
             sort(digit){
                 this.result = this.examples.createData.sort(digit);
             },
-        },
-        mounted(){
-            console.log(this.examples);
         }
     }
 </script>
