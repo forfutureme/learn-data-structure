@@ -16,6 +16,9 @@
                    @click="showAllCode(index)"></i>
                 <div class="code-center" v-html="text.code"></div>
             </div>
+            <div class="texts-describe"
+                 v-if="text.codeDesc"
+                 v-html="text.codeDesc"></div>
         </div>
     </div>
 </template>
@@ -52,6 +55,7 @@
                 transition: height  .3s;
                 height: 50px;
                 overflow: hidden;
+                margin-bottom: 10px;
                 .reserved-word{
                     color: #C41A16
                 }

@@ -106,6 +106,18 @@ const router = new VueRouter({
                     next
                 });
             }
+        },
+        {
+            path: '/hash',
+            name: 'hash',
+            component: resolve => require(['../views/page/hash/Hash.vue'], resolve),
+            beforeEnter(to, from, next){
+                store.dispatch(types.JAVASCRIPT_DATA_GLOBAL_CODE, {
+                    type: types.JAVASCRIPT_DATA_HASH_CODE_SET,
+                    name: 'hash',
+                    next
+                });
+            }
         }
     ]
 });

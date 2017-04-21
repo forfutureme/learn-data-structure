@@ -32,5 +32,10 @@ export default [
         name: '字典',
         id: '6',
         href: 'dictionary'
+    },
+    {
+        name: '散列',
+        id: '7',
+        href: 'hash'
     }
 ]
