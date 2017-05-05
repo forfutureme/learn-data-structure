@@ -11,11 +11,11 @@ const state = {
             id: 'Summarys'
         },
         {
-            name: '创建列表',
+            name: '创建树',
             id: 'Created'
         }
     ],
-    activityNav: 'Created',
+    activityNav: 'Summarys',
     code: {}
 };
 const getters = {};

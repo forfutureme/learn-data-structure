@@ -11,7 +11,7 @@ const state = {
             id: 'Summarys'
         },
         {
-            name: '创建列表',
+            name: '创建集合',
             id: 'Created'
         }
     ],

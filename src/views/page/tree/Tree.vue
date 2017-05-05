@@ -44,7 +44,7 @@
         },
         data(){
             return{
-                type:types.JAVASCRIPT_DATA_SET_ACTIVITY_NAV
+                type:types.JAVASCRIPT_DATA_TREE_ACTIVITY_NAV
             }
         },
         components:{
