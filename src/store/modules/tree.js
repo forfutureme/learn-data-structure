@@ -1,8 +1,7 @@
 /**
- * Created by huweijian on 2017/4/19.
+ * Created by huweijian on 2017/4/24.
  * @title
  */
-
 import * as types from '../mutation-type';
 
 const state = {
@@ -14,13 +13,9 @@ const state = {
         {
             name: '创建列表',
             id: 'Created'
-        },
-        {
-            name: '应用',
-            id: 'Uses'
         }
     ],
-    activityNav: 'Summarys',
+    activityNav: 'Created',
     code: {}
 };
 const getters = {};
@@ -31,7 +26,7 @@ const mutations = {
      * @param state
      * @param id
      */
-    [types.JAVASCRIPT_DATA_HASH_ACTIVITY_NAV]: (state, id) => {
+    [types.JAVASCRIPT_DATA_TREE_ACTIVITY_NAV]: (state, id) => {
         state.activityNav = id;
     },
     /**
@@ -40,7 +35,7 @@ const mutations = {
      * @param name
      * @param text
      */
-    [types.JAVASCRIPT_DATA_HASH_CODE_SET]: (state, {name, text}) => {
+    [types.JAVASCRIPT_DATA_TREE_CODE_SET]: (state, {name, text}) => {
         state.code[name] = text;
     }
 };

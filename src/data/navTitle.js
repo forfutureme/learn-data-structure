@@ -37,5 +37,15 @@ export default [
         name: '散列',
         id: '7',
         href: 'hash'
+    },
+    {
+        name: '集合',
+        id: '8',
+        href: 'set'
+    },
+    {
+        name: '树',
+        id: '9',
+        href: 'tree'
     }
 ]

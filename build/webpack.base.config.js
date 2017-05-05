@@ -101,7 +101,8 @@ module.exports = {
         ],
         extensions: ['.webpack.js', '.web.js', '.js', '.vue'],
         alias: {
-            'assets': path.resolve(__dirname, '../business/assets')
+            'assets': path.resolve(__dirname, '../src/assets'),
+            '~': path.resolve(__dirname, '../src')   //可惜 webstrom 不能识别。
         }
     }
 

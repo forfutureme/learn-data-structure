@@ -17,6 +17,8 @@ import stack from './modules/stack';
 import queue from './modules/queue';
 import dictionary from './modules/dictionary';
 import hash from './modules/hash';
+import set from './modules/set';
+import tree from './modules/tree';
 
 
 
@@ -49,7 +51,9 @@ export default new Vuex.Store({
         stack,
         queue,
         dictionary,
-        hash
+        hash,
+        set,
+        tree
     },
     strict: debug,
     plugins: debug ? [createLogger()] : []

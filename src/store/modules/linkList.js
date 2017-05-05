@@ -84,7 +84,7 @@ const mutations = {
      * @param name
      * @param text
      */
-    [types.JAVASCRIPT_DATA_LINK_CODE_SET]: (state, {name, text}) => {
+    [types.JAVASCRIPT_DATA_LINKLIST_CODE_SET]: (state, {name, text}) => {
         state.code[name] = text;
     }
 };
